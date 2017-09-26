@@ -3,34 +3,25 @@ from abc import ABCMeta, abstractmethod
 class Repository(metaclass=ABCMeta):
     users = {'Mark': {'password': 1234, 'amount': 1000}}
 
-    @abstractmethod
-    def checking(self):
-        pass
-
-    @abstractmethod
-    def withdraw_money(self):
-        pass
-
-    @abstractmethod
-    def eject_card(self):
-        pass
+    def Checking(self):
+        print(self.users['Mark']['amount'])
 
 
-class User(Repository):
+class Check(Repository):
     def __init__(self, password):
-        if str(self) in Repository.users.keys():
-            if password == Repository.users[str(self)]['password']:
-                print('change operation')
+        global number
+        if password == Repository.users['Mark']['password']:
+            print('change operation: \n 1)Checking \n 2)withdraw_money \n 3)eject_card')
+            number = input('your number: ')
         else:
             raise TypeError('try again')
 
-    def checking(self):
-            pass
+    def test(self):
+        if int(number) == 1:
+            return self.Checking()
 
-    def withdraw_money(self):
-            pass
 
-    def eject_card(self):
-            pass
 
-Mark = User(int(input("your password: ")))
+
+Mark = Check(int(input('password: ')))
+print(Mark.test())
