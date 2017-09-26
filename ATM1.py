@@ -24,4 +24,4 @@ class Check(Repository):
 
 
 Mark = Check(int(input('password: ')))
-print(Mark.test())
+Mark.test()
