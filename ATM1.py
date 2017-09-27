@@ -4,7 +4,7 @@ class Repository(metaclass=ABCMeta):
     users = {'Mark': {'password': 1234, 'amount': 1000}}
 
     def Checking(self):
-        print('your amount:', self.users['Mark']['amount'])
+        print('Your amount:', self.users['Mark']['amount'])
 
     def withdraw_money(self):
         sum1 = input('enter sum: ')
@@ -25,7 +25,7 @@ class Check(Repository):
             raise TypeError('try again')
 
     def test(self):
-        number = (input('your number: '))
+        number = (input('Your choise (number): '))
         if int(number) == 1:
             return self.Checking()
         elif int(number) == 2:
@@ -36,7 +36,7 @@ class Check(Repository):
 def uprfunc():
     Mark = Check(int(input('password: ')))
     Mark.test()
-    now = input('continue? yes/no: ')
+    now = input('Continue? yes/no: ')
     if now == 'yes':
         uprfunc()
     else:
