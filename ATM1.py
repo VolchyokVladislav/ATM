@@ -33,9 +33,13 @@ class Check(Repository):
         elif int(number) == 3:
             return self.eject_card()
 
+def uprfunc():
+    Mark = Check(int(input('password: ')))
+    Mark.test()
+    now = input('continue? yes/no: ')
+    if now == 'yes':
+        uprfunc()
+    else:
+        print('Goodbye')
 
-
-
-
-Mark = Check(int(input('password: ')))
-Mark.test()
+uprfunc()
